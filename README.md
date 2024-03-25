@@ -4,9 +4,11 @@
 
 ## How to run
 
-### Make sure you have installed JRE or JDK 17 or above.
+### Prerequisites 
 
-Open your cmd / terminal, enter command:
+Please make sure JRE or JDK 17 or above is installed.
+
+To check this, open your cmd / terminal, run command:
 
 ```
 java -version
@@ -21,7 +23,7 @@ OpenJDK 64-Bit Server VM Homebrew (build 17.0.9+0, mixed mode, sharing)
 
 If you don't know how to install JRE / JDK 17, please ask ChatGPT or search in the internet.
 
-### Clone the repository.
+### Clone repository
 
 ```
 git clone https://github.com/defengliang/7810-bi-project.git
@@ -32,7 +34,9 @@ Enter the project.
 cd 7810-bi-project
 ```
 
-### Download the csv files from the URL below and put it in the input folder.
+### Download CSV files.
+
+Download the fraudTrain.csv and fraudTest.csv files from the URL below and put them in the input folder.
 
 https://www.kaggle.com/datasets/kartik2112/fraud-detection
 
@@ -42,5 +46,10 @@ https://www.kaggle.com/datasets/kartik2112/fraud-detection
 java -jar 7810.jar
 ```
 
-### Check the arff files in the output folder.
+### Verify
 
+Check the output folder to see if fraudTrain.arff and fraudTest.arff are generated.
+
+## Weka
+
+Open the fraudTrain.arff file in Weka.
