@@ -1,10 +1,6 @@
 package hk.edu.hkbu;
 
-import java.io.BufferedReader;
-import java.io.BufferedWriter;
-import java.io.FileReader;
-import java.io.FileWriter;
-import java.io.IOException;
+import java.io.*;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
@@ -17,8 +13,41 @@ public class Main {
 
         // String inputFile = "/Users/peter/Downloads/fraudTrain.csv";
         // String outputFile = "/Users/peter/Downloads/fraudTrainData.arff";
-        String inputFile = "/Users/peter/Downloads/fraudTest.csv";
-        String outputFile = "/Users/peter/Downloads/fraudTestData.arff";
+        // String inputFile = "/Users/peter/Downloads/fraudTest.csv";
+        // String outputFile = "/Users/peter/Downloads/fraudTestData.arff";
+
+        String inputFolder = "input";
+        String outputFolder = "output";
+
+        // Read all the files in input folder.
+        File folder = new File(inputFolder);
+        File[] files = folder.listFiles();
+        if (files != null) {
+            for (File file : files) {
+                if (file.isFile() && file.getName().endsWith(".csv")) {
+
+                    String fileName = file.getName();
+                    int dotIndex = fileName.lastIndexOf('.');
+                    String nameWithoutExtension = (dotIndex == -1) ? fileName : fileName.substring(0, dotIndex);
+
+                    File outputFile = new File(outputFolder + File.separator + nameWithoutExtension + ".arff");
+
+                    System.out.println("Processing file: " + file.getAbsolutePath());
+                    processFile(file, outputFile);
+                    System.out.println("Finished processing file: " + file.getAbsolutePath());
+                    System.out.println("Output file: " + outputFile.getAbsolutePath());
+                }
+            }
+        }
+        System.out.println("The whole process completed!");
+    }
+
+    /**
+     * Process input file and convert to arff file.
+     * @param inputFile the csv file.
+     * @param outputFile the arff file.
+     */
+    private static void processFile(File inputFile, File outputFile) {
 
         try {
             // Read the input file
@@ -47,12 +76,17 @@ public class Main {
             BufferedWriter writer = new BufferedWriter(new FileWriter(outputFile));
             writer.write(output.toString());
             writer.close();
-
-            System.out.println("File conversion completed successfully!");
         } catch (IOException e) {
             System.out.println("An error occurred: " + e.getMessage());
         }
+
     }
+
+    /**
+     * Convert and filter the content in csv file and convert to the records in arff file.
+     * @param line the line inside the csv file.
+     * @return the converted line in arff.
+     */
 
     private static String convertAndFilter(String line) {
 
@@ -140,6 +174,11 @@ public class Main {
         return newLine.toString();
     }
 
+    /**
+     * Change the string in data time format into unit time.
+     * @param dateStr
+     * @return
+     */
     private static long strToUnixTime(String dateStr) {
 
         try {
@@ -159,6 +198,11 @@ public class Main {
         return 0;
     }
 
+    /**
+     * Given a string in date format, return the age.
+     * @param dateStr
+     * @return
+     */
     private static int getAge(String dateStr) {
         try {
             DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
@@ -180,6 +224,11 @@ public class Main {
         }
     }
 
+    /**
+     * Convert a US state to integer string.
+     * @param field the US state like LA
+     * @return
+     */
     private static String convertState(String field) {
 
         if (field.length() != 2) {
@@ -193,6 +242,10 @@ public class Main {
         return result + "";
     }
 
+    /**
+     * The header of the arff file.
+     * @return
+     */
     private static String getHeader() {
         return """
 @relation fraudTranDetect
@@ -222,6 +275,11 @@ public class Main {
 
     }
 
+    /**
+     *
+     * @param line
+     * @return
+     */
     private static String[] parseCSVLine(String line) {
         StringBuilder sb = new StringBuilder();
         boolean inQuotes = false;
