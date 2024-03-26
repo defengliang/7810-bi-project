@@ -83,7 +83,7 @@ public class Main {
                 convertAndFilter(line, fraudList, normalList);
             }
 
-            System.out.println("total records in file: " + line);
+            System.out.println("total records in file: " + lineCount);
             System.out.println("fraud record amount: " + fraudList.size());
             System.out.println("normal record amount: " + normalList.size());
 
