@@ -6,7 +6,10 @@ import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.Period;
 import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Date;
+import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
@@ -30,10 +33,18 @@ public class Main {
                     int dotIndex = fileName.lastIndexOf('.');
                     String nameWithoutExtension = (dotIndex == -1) ? fileName : fileName.substring(0, dotIndex);
 
-                    File outputFile = new File(outputFolder + File.separator + nameWithoutExtension + ".arff");
+                    boolean isTestFile = false;
+                    File outputFile = null;
+                    if (!fileName.toLowerCase().contains("test")) {
+                        outputFile = new File(outputFolder + File.separator + nameWithoutExtension + "_balanced.arff");
+                    } else {
+                        isTestFile = true;
+                        outputFile = new File(outputFolder + File.separator + nameWithoutExtension + ".arff");
+                    }
+
 
                     System.out.println("Processing file: " + file.getAbsolutePath());
-                    processFile(file, outputFile);
+                    processFile(file, outputFile, isTestFile);
                     System.out.println("Finished processing file: " + file.getAbsolutePath());
                     System.out.println("Output file: " + outputFile.getAbsolutePath());
                 }
@@ -47,7 +58,7 @@ public class Main {
      * @param inputFile the csv file.
      * @param outputFile the arff file.
      */
-    private static void processFile(File inputFile, File outputFile) {
+    private static void processFile(File inputFile, File outputFile, boolean isTestFile) {
 
         try {
             // Read the input file
@@ -59,6 +70,9 @@ public class Main {
             output.append(header);
 
             int lineCount = 0;
+            List<String> fraudList = new ArrayList<>();
+            List<String> normalList = new ArrayList<>();
+
             while ((line = reader.readLine()) != null) {
                 lineCount++;
                 if (lineCount == 1) {
@@ -66,10 +80,29 @@ public class Main {
                 }
 
                 // Perform conversions and filtering
-                String convertedLine = convertAndFilter(line);
-                output.append(convertedLine).append("\n");
+                convertAndFilter(line, fraudList, normalList);
             }
 
+            Collections.shuffle(normalList);
+            List<String> randomNormalList = normalList.subList(0, fraudList.size() * 2);
+
+            List<String> resultList;
+            if (isTestFile) {
+                resultList = new ArrayList<>(fraudList.size() + normalList.size());
+                resultList.addAll(fraudList);
+                resultList.addAll(randomNormalList);
+
+            } else {
+                resultList = new ArrayList<>(fraudList.size() + randomNormalList.size());
+                resultList.addAll(fraudList);
+                resultList.addAll(randomNormalList);
+            }
+
+            Collections.shuffle(resultList);
+
+            for (String s: resultList) {
+                output.append(s).append("\n");
+            }
             reader.close();
 
             // Write to the output file
@@ -79,20 +112,18 @@ public class Main {
         } catch (IOException e) {
             System.out.println("An error occurred: " + e.getMessage());
         }
-
     }
+
 
     /**
      * Convert and filter the content in csv file and convert to the records in arff file.
      * @param line the line inside the csv file.
-     * @return the converted line in arff.
      */
 
-    private static String convertAndFilter(String line) {
+    private static void convertAndFilter(String line, List<String> fraudList, List<String> normalList) {
 
         StringBuilder newLine = new StringBuilder();
         String[] data = parseCSVLine(line);
-
 
         for (int i = 0; i <= 22; i++) {
             if (i == 0) {
@@ -119,7 +150,7 @@ public class Main {
             // data[16] - job - hashCode
             // data[17] - dob - age
             // data[18] - trans_num - hashCode
-            // data[19] - unix_time - hashCode
+            // data[19] - unix_time - no change
             // data[20] - merch_lat - no change
             // data[21] - merch_long - no change
             // data[22] - is_fault - no change
@@ -148,8 +179,7 @@ public class Main {
                     i == 9 ||
                     i == 10 ||
                     i == 16 ||
-                    i == 18 ||
-                    i == 19) {
+                    i == 18) {
                 newLine.append(field.hashCode());
             }
 
@@ -160,6 +190,7 @@ public class Main {
                     i == 13 ||
                     i == 14 ||
                     i == 15 ||
+                    i == 19 ||
                     i == 20 ||
                     i == 21 ||
                     i == 22) {
@@ -171,7 +202,11 @@ public class Main {
             }
         }
 
-        return newLine.toString();
+        if ("1".equals(data[22])) {
+            fraudList.add(newLine.toString());
+        } else {
+            normalList.add(newLine.toString());
+        }
     }
 
     /**
@@ -309,3 +344,4 @@ public class Main {
         return newData;
     }
 }
+
