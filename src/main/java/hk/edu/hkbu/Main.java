@@ -83,6 +83,10 @@ public class Main {
                 convertAndFilter(line, fraudList, normalList);
             }
 
+            System.out.println("total records in file: " + line);
+            System.out.println("fraud record amount: " + fraudList.size());
+            System.out.println("normal record amount: " + normalList.size());
+
             Collections.shuffle(normalList);
             List<String> randomNormalList = normalList.subList(0, fraudList.size() * 2);
 
@@ -99,6 +103,8 @@ public class Main {
             }
 
             Collections.shuffle(resultList);
+
+            System.out.println("output file record amount: " + resultList.size());
 
             for (String s: resultList) {
                 output.append(s).append("\n");
