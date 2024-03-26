@@ -34,7 +34,7 @@ public class Main {
                     String nameWithoutExtension = (dotIndex == -1) ? fileName : fileName.substring(0, dotIndex);
 
                     boolean isTestFile = false;
-                    File outputFile = null;
+                    File outputFile;
                     if (!fileName.toLowerCase().contains("test")) {
                         outputFile = new File(outputFolder + File.separator + nameWithoutExtension + "_balanced.arff");
                     } else {
@@ -90,7 +90,7 @@ public class Main {
             if (isTestFile) {
                 resultList = new ArrayList<>(fraudList.size() + normalList.size());
                 resultList.addAll(fraudList);
-                resultList.addAll(randomNormalList);
+                resultList.addAll(normalList);
 
             } else {
                 resultList = new ArrayList<>(fraudList.size() + randomNormalList.size());
