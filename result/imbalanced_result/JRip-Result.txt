@@ -1,0 +1,111 @@
+=== Run information ===
+
+Scheme:       weka.classifiers.rules.JRip -F 3 -N 2.0 -O 2 -S 1
+Relation:     fraudTranDetect
+Instances:    1296675
+Attributes:   22
+              trans_date_trans_time
+              cc_num
+              merchant
+              category
+              amt
+              first
+              last
+              gender
+              street
+              city
+              state
+              zip
+              lat
+              long
+              city_pop
+              job
+              dob
+              trans_num
+              unix_time
+              merch_lat
+              merch_long
+              class-att
+Test mode:    user supplied test set:  size unknown (reading incrementally)
+
+=== Classifier model (full training set) ===
+
+JRIP rules:
+===========
+
+(amt <= 1161.58) and (category <= -1577200058) and (amt >= 875.71) and (gender = M) => class-att=1 (1028.0/151.0)
+(amt <= 1162.35) and (dob >= 54) and (category <= -1577200058) and (amt >= 952.54) and (unix_time >= -121854243) => class-att=1 (152.0/19.0)
+(amt <= 1092.74) and (dob >= 54) and (category <= -1221875766) and (amt >= 789.77) and (city_pop >= 2601) and (city <= 762545693) and (trans_date_trans_time >= 1578069427) => class-att=1 (172.0/23.0)
+(amt >= 257.47) and (category >= -827548638) and (category <= -827548638) => class-att=1 (1809.0/76.0)
+(category <= -1221875766) and (gender = M) and (amt >= 756.17) and (amt <= 954.23) and (city_pop <= 1966) and (dob <= 53) => class-att=1 (147.0/2.0)
+(amt <= 1139.57) and (category <= -1221875766) and (dob >= 54) and (amt >= 789.77) and (city_pop >= 2601) => class-att=1 (533.0/163.0)
+(amt >= 695.8) and (category <= -1221875766) and (dob >= 54) and (category >= -1221875766) and (amt <= 903.22) => class-att=1 (423.0/124.0)
+(amt <= 1179.99) and (city_pop <= 2607) and (category <= -1577197827) and (trans_date_trans_time <= 1554991352) and (amt >= 846.25) and (last <= 67335029) and (state <= 417) => class-att=1 (84.0/11.0)
+(amt <= 1206.74) and (category <= -1577200058) and (amt >= 876.1) and (trans_date_trans_time <= 1559139059) and (cc_num >= 430498436) => class-att=1 (59.0/10.0)
+(amt >= 736.16) and (category <= -1221875766) and (gender = M) and (amt <= 954.23) and (category >= -1221875766) => class-att=1 (225.0/79.0)
+(amt <= 1177.64) and (city_pop <= 2470) and (amt >= 747.72) and (category <= -1577197827) and (dob <= 31) => class-att=1 (69.0/11.0)
+(amt <= 1206.74) and (city_pop <= 2470) and (amt >= 741.07) and (category <= -1577197827) and (gender = M) and (dob <= 49) => class-att=1 (22.0/0.0)
+(amt <= 1177.64) and (category <= -1577200058) and (amt >= 898.72) and (dob <= 31) and (last >= -210938856) => class-att=1 (49.0/8.0)
+(amt <= 1215.07) and (amt >= 738.27) and (city_pop <= 2457) and (category <= -1577197827) and (trans_date_trans_time <= 1563118700) and (trans_date_trans_time >= 1561040115) => class-att=1 (74.0/25.0)
+(amt <= 1050.47) and (city_pop <= 2435) and (category <= -1221875766) and (last >= 72504843) and (dob >= 51) and (amt >= 798.71) and (first <= 873506786) => class-att=1 (118.0/38.0)
+(amt <= 1206.74) and (city_pop <= 2470) and (amt >= 789.14) and (category <= -1577200058) and (state >= 401) and (unix_time <= 414843410) => class-att=1 (47.0/16.0)
+(amt >= 658.54) and (amt <= 1011.53) and (city_pop <= 2470) and (dob <= 46) and (street <= -236674952) and (merch_lat >= 39.721265) and (trans_date_trans_time >= 1581878966) => class-att=1 (46.0/7.0)
+(amt <= 1009.62) and (city_pop <= 2435) and (amt >= 741.07) and (category <= -1221875766) and (city_pop >= 1165) and (trans_date_trans_time >= 1574872956) and (long <= -86.9475) => class-att=1 (73.0/25.0)
+(category <= -1221875766) and (gender = M) and (amt <= 904.15) and (amt >= 843.5) => class-att=1 (96.0/43.0)
+(amt <= 953.76) and (city_pop <= 2408) and (category >= -1577197827) and (category <= -1221875766) and (dob >= 53) and (amt >= 743.89) and (lat >= 35.8759) and (unix_time >= -606619994) and (city <= 132045117) and (street <= 14740859) => class-att=1 (43.0/6.0)
+(amt >= 648.73) and (amt <= 1012.73) and (dob <= 28) and (city <= -1203239636) and (trans_date_trans_time <= 1557856954) and (merchant <= 1853638727) => class-att=1 (27.0/4.0)
+(amt >= 633.85) and (category <= -1221875766) and (category >= -1221875766) and (amt <= 918.58) and (lat >= 39.1412) and (cc_num >= 1043656699) and (state <= 372) and (merch_lat >= 43.146445) => class-att=1 (20.0/5.0)
+(amt >= 658.17) and (amt <= 1084.6) and (category <= -1221875766) and (city_pop <= 2408) and (long >= -89.7855) and (first <= 65295514) and (trans_date_trans_time <= 1575299761) and (cc_num <= 60520736) => class-att=1 (93.0/43.0)
+(category <= -1221875766) and (amt >= 727.13) and (dob <= 37) and (amt <= 829.06) and (category >= -1577197827) and (gender = M) and (unix_time <= 1149640699) => class-att=1 (41.0/12.0)
+(amt <= 1258.71) and (category <= -1577200058) and (amt >= 917.52) and (trans_date_trans_time >= 1576945017) and (long <= -90.9288) => class-att=1 (78.0/32.0)
+(amt <= 1239.22) and (city_pop <= 2470) and (trans_date_trans_time <= 1553751985) and (dob <= 50) and (long <= -91.0685) and (amt >= 716.13) and (trans_num >= -1008472045) and (trans_date_trans_time >= 1548693060) and (job >= -2140923154) => class-att=1 (18.0/1.0)
+(city_pop <= 2470) and (long >= -90.5451) and (amt >= 729.29) and (amt <= 959.67) and (merch_long <= -87.107632) and (city >= 76884331) => class-att=1 (26.0/8.0)
+(category >= 500006792) and (city_pop <= 2807) and (category <= 500006792) and (amt >= 442.43) => class-att=1 (115.0/5.0)
+(amt >= 620.51) and (amt <= 1294.83) and (category <= -1221875766) and (dob <= 28) and (long >= -82.8342) and (first <= -157620145) => class-att=1 (29.0/7.0)
+(amt <= 1210.91) and (category <= -1221875766) and (amt >= 727.13) and (dob <= 32) and (merchant >= -415828430) and (cc_num >= 472936161) and (trans_num <= -1378225540) => class-att=1 (19.0/6.0)
+(amt >= 623.43) and (category <= -1221875766) and (category >= -1221875766) and (amt <= 916.03) and (gender = M) and (cc_num >= 213794518) and (long <= -87.4208) => class-att=1 (32.0/9.0)
+(amt >= 649.14) and (amt <= 1224.1) and (category <= -1221875766) and (trans_date_trans_time <= 1553278288) and (city_pop >= 166081) and (street <= -58265534) and (zip <= 37932) => class-att=1 (35.0/12.0)
+(amt >= 644.4) and (amt <= 1268.18) and (category <= -1221875766) and (city_pop <= 2303) and (city_pop >= 1334) and (lat >= 44.0978) => class-att=1 (21.0/8.0)
+(amt >= 623.89) and (category <= -1221875766) and (category >= -1221875766) and (amt <= 927.45) and (dob >= 56) and (city_pop >= 2566) and (job <= 55812159) => class-att=1 (10.0/1.0)
+(category <= -1221875766) and (category >= -1221875766) and (amt <= 918.58) and (gender = M) and (amt >= 678.9) => class-att=1 (51.0/24.0)
+(category <= -1221875766) and (amt >= 736.59) and (amt <= 981.21) and (long >= -91.0243) and (cc_num >= 1487850733) and (lat >= 42.6835) and (street <= 255578069) => class-att=1 (8.0/1.0)
+(amt >= 727.13) and (amt <= 955.4) and (city_pop <= 1762) and (city <= -1581431855) and (trans_date_trans_time >= 1577635711) and (unix_time <= 362209632) and (category <= -1221873535) => class-att=1 (20.0/3.0)
+(amt <= 1258.71) and (category <= -1221875766) and (trans_date_trans_time <= 1560263618) and (amt >= 752.7) and (lat <= 40.2967) and (city_pop <= 885) and (city_pop >= 493) => class-att=1 (25.0/8.0)
+(amt <= 1217.09) and (category <= -1577200058) and (amt >= 931.28) and (first >= 351044142) and (first <= 1235314147) => class-att=1 (22.0/7.0)
+(amt <= 1000.57) and (amt >= 736.59) and (category <= -1221875766) and (unix_time >= 1253839990) and (job <= -1212327513) and (job >= -1546812751) and (city_pop <= 28739) and (category >= -1577197827) => class-att=1 (19.0/4.0)
+(amt >= 716.15) and (dob <= 38) and (amt <= 893.06) and (job <= -661097) and (merch_long >= -80.914952) and (trans_date_trans_time >= 1566735039) and (unix_time <= -149555130) => class-att=1 (16.0/7.0)
+ => class-att=0 (1290681.0/2556.0)
+
+Number of Rules : 42
+
+
+Time taken to build model: 1545.35 seconds
+
+=== Evaluation on test set ===
+
+Time taken to test model on supplied test set: 3.41 seconds
+
+=== Summary ===
+
+Correctly Classified Instances      554310               99.7465 %
+Incorrectly Classified Instances      1409                0.2535 %
+Kappa statistic                          0.6443
+Mean absolute error                      0.0046
+Root mean squared error                  0.047 
+Relative absolute error                 47.8573 %
+Root relative squared error             75.7329 %
+Total Number of Instances           555719     
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.999    0.402    0.998      0.999    0.999      0.646    0.799     0.998     0
+                 0.598    0.001    0.701      0.598    0.646      0.646    0.799     0.511     1
+Weighted Avg.    0.997    0.400    0.997      0.997    0.997      0.646    0.799     0.997     
+
+=== Confusion Matrix ===
+
+      a      b   <-- classified as
+ 553027    547 |      a = 0
+    862   1283 |      b = 1
+

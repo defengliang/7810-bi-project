@@ -1,0 +1,1277 @@
+=== Run information ===
+
+Scheme:       weka.classifiers.trees.LMT -I -1 -M 15 -W 0.0
+Relation:     fraudTranDetect
+Instances:    1296675
+Attributes:   22
+              trans_date_trans_time
+              cc_num
+              merchant
+              category
+              amt
+              first
+              last
+              gender
+              street
+              city
+              state
+              zip
+              lat
+              long
+              city_pop
+              job
+              dob
+              trans_num
+              unix_time
+              merch_lat
+              merch_long
+              class-att
+Test mode:    user supplied test set:  size unknown (reading incrementally)
+
+=== Classifier model (full training set) ===
+
+Logistic model tree 
+------------------
+
+amt <= 259
+|   amt <= 24.26
+|   |   amt <= 6.77: LM_1:0/0 (225608)
+|   |   amt > 6.77
+|   |   |   category <= -1577197827: LM_2:0/0 (54701)
+|   |   |   category > -1577197827
+|   |   |   |   category <= -1446542013
+|   |   |   |   |   amt <= 18.2: LM_3:0/4 (499)
+|   |   |   |   |   amt > 18.2: LM_4:1/5 (190)
+|   |   |   |   category > -1446542013
+|   |   |   |   |   category <= 580711856
+|   |   |   |   |   |   category <= -1221875766: LM_5:0/0 (14823)
+|   |   |   |   |   |   category > -1221875766
+|   |   |   |   |   |   |   amt <= 17.32
+|   |   |   |   |   |   |   |   category <= -827550869
+|   |   |   |   |   |   |   |   |   category <= -865698022
+|   |   |   |   |   |   |   |   |   |   amt <= 13.11
+|   |   |   |   |   |   |   |   |   |   |   amt <= 10.09: LM_6:0/0 (24032)
+|   |   |   |   |   |   |   |   |   |   |   amt > 10.09: LM_7:12/12 (1729)
+|   |   |   |   |   |   |   |   |   |   amt > 13.11: LM_8:0/0 (1999)
+|   |   |   |   |   |   |   |   |   category > -865698022
+|   |   |   |   |   |   |   |   |   |   dob <= 52: LM_9:5/58 (1179)
+|   |   |   |   |   |   |   |   |   |   dob > 52: LM_10:25/78 (134)
+|   |   |   |   |   |   |   |   category > -827550869: LM_11:0/0 (71106)
+|   |   |   |   |   |   |   amt > 17.32: LM_12:0/0 (43202)
+|   |   |   |   |   category > 580711856: LM_13:0/0 (18642)
+|   amt > 24.26: LM_14:0/0 (802196)
+amt > 259
+|   amt <= 712.94
+|   |   category <= -865698022: LM_15:0/0 (21444)
+|   |   category > -865698022
+|   |   |   category <= -827548638: LM_16:9/78 (1793)
+|   |   |   category > -827548638
+|   |   |   |   amt <= 419.72: LM_17:0/75 (3971)
+|   |   |   |   amt > 419.72
+|   |   |   |   |   category <= 500006792
+|   |   |   |   |   |   category <= 126971334: LM_18:0/93 (58)
+|   |   |   |   |   |   category > 126971334
+|   |   |   |   |   |   |   city_pop <= 2526: LM_19:6/99 (127)
+|   |   |   |   |   |   |   city_pop > 2526
+|   |   |   |   |   |   |   |   gender = F
+|   |   |   |   |   |   |   |   |   dob <= 52: LM_20:5/118 (85)
+|   |   |   |   |   |   |   |   |   dob > 52: LM_21:12/125 (54)
+|   |   |   |   |   |   |   |   gender = M: LM_22:1/113 (133)
+|   |   |   |   |   category > 500006792: LM_23:1/76 (60)
+|   amt > 712.94
+|   |   amt <= 1206.74
+|   |   |   category <= -1221875766
+|   |   |   |   gender = F
+|   |   |   |   |   dob <= 54
+|   |   |   |   |   |   dob <= 28
+|   |   |   |   |   |   |   category <= -1577200058: LM_24:0/41 (120)
+|   |   |   |   |   |   |   category > -1577200058: LM_25:1/42 (124)
+|   |   |   |   |   |   dob > 28
+|   |   |   |   |   |   |   first <= -2079637766: LM_26:2/17 (36)
+|   |   |   |   |   |   |   first > -2079637766
+|   |   |   |   |   |   |   |   city_pop <= 2471
+|   |   |   |   |   |   |   |   |   trans_date_trans_time <= 1552068851: LM_27:4/20 (75)
+|   |   |   |   |   |   |   |   |   trans_date_trans_time > 1552068851
+|   |   |   |   |   |   |   |   |   |   trans_date_trans_time <= 1591421015
+|   |   |   |   |   |   |   |   |   |   |   cc_num <= -1782492929: LM_28:7/24 (66)
+|   |   |   |   |   |   |   |   |   |   |   cc_num > -1782492929
+|   |   |   |   |   |   |   |   |   |   |   |   category <= -1577200058
+|   |   |   |   |   |   |   |   |   |   |   |   |   amt <= 849.79: LM_29:0/24 (36)
+|   |   |   |   |   |   |   |   |   |   |   |   |   amt > 849.79
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   dob <= 37: LM_30:0/27 (41)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   dob > 37: LM_31:1/28 (80)
+|   |   |   |   |   |   |   |   |   |   |   |   category > -1577200058: LM_32:1/23 (313)
+|   |   |   |   |   |   |   |   |   |   trans_date_trans_time > 1591421015: LM_33:5/22 (26)
+|   |   |   |   |   |   |   |   city_pop > 2471
+|   |   |   |   |   |   |   |   |   cc_num <= 2129296723: LM_34:0/15 (1105)
+|   |   |   |   |   |   |   |   |   cc_num > 2129296723: LM_35:6/21 (35)
+|   |   |   |   |   dob > 54
+|   |   |   |   |   |   amt <= 778.98: LM_36:5/43 (199)
+|   |   |   |   |   |   amt > 778.98
+|   |   |   |   |   |   |   amt <= 1166.23
+|   |   |   |   |   |   |   |   city_pop <= 3508
+|   |   |   |   |   |   |   |   |   state <= 607
+|   |   |   |   |   |   |   |   |   |   category <= -1577200058: LM_37:1/39 (248)
+|   |   |   |   |   |   |   |   |   |   category > -1577200058: LM_38:3/41 (266)
+|   |   |   |   |   |   |   |   |   state > 607: LM_39:0/38 (26)
+|   |   |   |   |   |   |   |   city_pop > 3508: LM_40:0/38 (482)
+|   |   |   |   |   |   |   amt > 1166.23: LM_41:1/39 (28)
+|   |   |   |   gender = M
+|   |   |   |   |   category <= -1577200058
+|   |   |   |   |   |   amt <= 840.16: LM_42:2/28 (169)
+|   |   |   |   |   |   amt > 840.16
+|   |   |   |   |   |   |   city_pop <= 2223: LM_43:1/28 (470)
+|   |   |   |   |   |   |   city_pop > 2223
+|   |   |   |   |   |   |   |   job <= -1796486239: LM_44:0/27 (42)
+|   |   |   |   |   |   |   |   job > -1796486239
+|   |   |   |   |   |   |   |   |   amt <= 888.99: LM_45:22/50 (66)
+|   |   |   |   |   |   |   |   |   amt > 888.99
+|   |   |   |   |   |   |   |   |   |   street <= 1677062458: LM_46:6/34 (515)
+|   |   |   |   |   |   |   |   |   |   street > 1677062458: LM_47:18/46 (69)
+|   |   |   |   |   category > -1577200058
+|   |   |   |   |   |   amt <= 980.49
+|   |   |   |   |   |   |   category <= -1446542013
+|   |   |   |   |   |   |   |   city_pop <= 2457
+|   |   |   |   |   |   |   |   |   dob <= 53: LM_48:0/22 (62)
+|   |   |   |   |   |   |   |   |   dob > 53
+|   |   |   |   |   |   |   |   |   |   amt <= 742.96: LM_49:1/25 (21)
+|   |   |   |   |   |   |   |   |   |   amt > 742.96
+|   |   |   |   |   |   |   |   |   |   |   state <= 238: LM_50:10/38 (27)
+|   |   |   |   |   |   |   |   |   |   |   state > 238: LM_51:0/28 (109)
+|   |   |   |   |   |   |   |   city_pop > 2457
+|   |   |   |   |   |   |   |   |   amt <= 863.52: LM_52:4/36 (192)
+|   |   |   |   |   |   |   |   |   amt > 863.52
+|   |   |   |   |   |   |   |   |   |   dob <= 53: LM_53:1/38 (63)
+|   |   |   |   |   |   |   |   |   |   dob > 53: LM_54:4/41 (90)
+|   |   |   |   |   |   |   category > -1446542013
+|   |   |   |   |   |   |   |   amt <= 909.15: LM_55:1/34 (539)
+|   |   |   |   |   |   |   |   amt > 909.15: LM_56:1/34 (79)
+|   |   |   |   |   |   amt > 980.49
+|   |   |   |   |   |   |   dob <= 50: LM_57:16/37 (122)
+|   |   |   |   |   |   |   dob > 50: LM_58:26/47 (138)
+|   |   |   category > -1221875766: LM_59:31/38 (708)
+|   |   amt > 1206.74: LM_60:50/55 (2123)
+
+Number of Leaves  : 	60
+
+Size of the Tree : 	119
+
+
+
+LM_1:
+Class 0 :
+0    + 
+
+Class 1 :
+0    + 
+
+
+LM_2:
+Class 0 :
+0    + 
+
+Class 1 :
+0    + 
+
+
+
+LM_3:
+Class 0 :
+-5.57 + 
+[amt] * 0.26
+
+Class 1 :
+5.57 + 
+[amt] * -0.26
+
+LM_4:
+Class 0 :
+-4.53 + 
+[amt] * 0.26 +
+[dob] * -0.02
+
+Class 1 :
+4.53 + 
+[amt] * -0.26 +
+[dob] * 0.02
+
+
+
+LM_5:
+Class 0 :
+0    + 
+
+Class 1 :
+0    + 
+
+
+
+
+
+
+LM_6:
+Class 0 :
+0    + 
+
+Class 1 :
+0    + 
+
+LM_7:
+Class 0 :
+-13.74 + 
+[amt] * 0.52 +
+[zip] * 0    +
+[dob] * 0.01
+
+Class 1 :
+13.74 + 
+[amt] * -0.52 +
+[zip] * -0 +
+[dob] * -0.01
+
+LM_8:
+Class 0 :
+0    + 
+
+Class 1 :
+0    + 
+
+
+LM_9:
+Class 0 :
+-1.73 + 
+[amt] * 0.2  +
+[gender=M] * -0.42 +
+[state] * 0    +
+[zip] * 0    +
+[lat] * 0    +
+[dob] * -0.05 +
+[merch_lat] * -0
+
+Class 1 :
+1.73 + 
+[amt] * -0.2 +
+[gender=M] * 0.42 +
+[state] * -0 +
+[zip] * -0 +
+[lat] * -0 +
+[dob] * 0.05 +
+[merch_lat] * 0   
+
+LM_10:
+Class 0 :
+-42.57 + 
+[amt] * 0.11 +
+[gender=M] * -0.05 +
+[state] * -0 +
+[zip] * 0    +
+[lat] * 0    +
+[long] * 0    +
+[city_pop] * -0 +
+[dob] * -0 +
+[merch_lat] * -0
+
+Class 1 :
+42.57 + 
+[amt] * -0.11 +
+[gender=M] * 0.05 +
+[state] * 0    +
+[zip] * -0 +
+[lat] * -0 +
+[long] * -0 +
+[city_pop] * 0    +
+[dob] * 0    +
+[merch_lat] * 0   
+
+LM_11:
+Class 0 :
+0    + 
+
+Class 1 :
+0    + 
+
+LM_12:
+Class 0 :
+0    + 
+
+Class 1 :
+0    + 
+
+LM_13:
+Class 0 :
+0    + 
+
+Class 1 :
+0    + 
+
+LM_14:
+Class 0 :
+0    + 
+
+Class 1 :
+0    + 
+
+
+
+LM_15:
+Class 0 :
+0    + 
+
+Class 1 :
+0    + 
+
+
+LM_16:
+Class 0 :
+23.83 + 
+[amt] * -0.08 +
+[gender=M] * -2.2 +
+[state] * -0 +
+[lat] * -0 +
+[long] * -0 +
+[dob] * -0.02
+
+Class 1 :
+-23.83 + 
+[amt] * 0.08 +
+[gender=M] * 2.2  +
+[state] * 0    +
+[lat] * 0    +
+[long] * 0    +
+[dob] * 0.02
+
+
+LM_17:
+Class 0 :
+2.52 + 
+[amt] * -0.01 +
+[gender=M] * 0.28 +
+[state] * -0 +
+[lat] * -0 +
+[long] * -0 +
+[dob] * 0   
+
+Class 1 :
+-2.52 + 
+[amt] * 0.01 +
+[gender=M] * -0.28 +
+[state] * 0    +
+[lat] * 0    +
+[long] * 0    +
+[dob] * -0
+
+
+
+LM_18:
+Class 0 :
+9.12 + 
+[amt] * -0 +
+[gender=M] * 0.42 +
+[state] * -0 +
+[zip] * -0 +
+[lat] * -0.04 +
+[long] * -0 +
+[dob] * 0.01
+
+Class 1 :
+-9.12 + 
+[amt] * 0    +
+[gender=M] * -0.42 +
+[state] * 0    +
+[zip] * 0    +
+[lat] * 0.04 +
+[long] * 0    +
+[dob] * -0.01
+
+
+LM_19:
+Class 0 :
+8.58 + 
+[amt] * -0.01 +
+[gender=M] * -0.52 +
+[state] * -0 +
+[zip] * -0 +
+[lat] * 0.03 +
+[long] * -0 +
+[dob] * 0.02
+
+Class 1 :
+-8.58 + 
+[amt] * 0.01 +
+[gender=M] * 0.52 +
+[state] * 0    +
+[zip] * 0    +
+[lat] * -0.03 +
+[long] * 0    +
+[dob] * -0.02
+
+
+
+LM_20:
+Class 0 :
+-24.98 + 
+[amt] * -0.01 +
+[gender=M] * 0.65 +
+[state] * -0 +
+[zip] * -0 +
+[lat] * -0.04 +
+[long] * -0.01 +
+[dob] * 0.02 +
+[merch_lat] * 0.04
+
+Class 1 :
+24.98 + 
+[amt] * 0.01 +
+[gender=M] * -0.65 +
+[state] * 0    +
+[zip] * 0    +
+[lat] * 0.04 +
+[long] * 0.01 +
+[dob] * -0.02 +
+[merch_lat] * -0.04
+
+LM_21:
+Class 0 :
+39.35 + 
+[amt] * 0.02 +
+[gender=M] * 0.65 +
+[state] * -0 +
+[zip] * 0    +
+[lat] * -0.04 +
+[long] * -0.01 +
+[dob] * -0 +
+[merch_lat] * 0.01
+
+Class 1 :
+-39.35 + 
+[amt] * -0.02 +
+[gender=M] * -0.65 +
+[state] * 0    +
+[zip] * -0 +
+[lat] * 0.04 +
+[long] * 0.01 +
+[dob] * 0    +
+[merch_lat] * -0.01
+
+LM_22:
+Class 0 :
+2.7  + 
+[amt] * 0    +
+[gender=M] * 0.65 +
+[state] * -0 +
+[zip] * -0 +
+[lat] * -0.04 +
+[long] * -0.01 +
+[dob] * -0 +
+[merch_lat] * 0.01
+
+Class 1 :
+-2.7 + 
+[amt] * -0 +
+[gender=M] * -0.65 +
+[state] * 0    +
+[zip] * 0    +
+[lat] * 0.04 +
+[long] * 0.01 +
+[dob] * 0    +
+[merch_lat] * -0.01
+
+LM_23:
+Class 0 :
+1.5  + 
+[amt] * -0 +
+[gender=M] * 0.28 +
+[state] * -0 +
+[lat] * -0 +
+[long] * -0 +
+[dob] * 0   
+
+Class 1 :
+-1.5 + 
+[amt] * 0    +
+[gender=M] * -0.28 +
+[state] * 0    +
+[lat] * 0    +
+[long] * 0    +
+[dob] * -0
+
+
+
+
+
+
+
+LM_24:
+Class 0 :
+-17.41 + 
+[amt] * -0 +
+[gender=M] * -0.35 +
+[state] * 0    +
+[zip] * 0    +
+[lat] * -0.02 +
+[dob] * -0.05 +
+[merch_lat] * 0.01
+
+Class 1 :
+17.41 + 
+[amt] * 0    +
+[gender=M] * 0.35 +
+[state] * -0 +
+[zip] * -0 +
+[lat] * 0.02 +
+[dob] * 0.05 +
+[merch_lat] * -0.01
+
+LM_25:
+Class 0 :
+-19.43 + 
+[amt] * 0    +
+[gender=M] * -0.35 +
+[state] * 0    +
+[zip] * 0    +
+[lat] * -0.02 +
+[dob] * -0.05 +
+[merch_lat] * 0.01
+
+Class 1 :
+19.43 + 
+[amt] * -0 +
+[gender=M] * 0.35 +
+[state] * -0 +
+[zip] * -0 +
+[lat] * 0.02 +
+[dob] * 0.05 +
+[merch_lat] * -0.01
+
+
+LM_26:
+Class 0 :
+-7.94 + 
+[amt] * -0 +
+[gender=M] * -0.35 +
+[lat] * -0.02 +
+[dob] * 0.01
+
+Class 1 :
+7.94 + 
+[amt] * 0    +
+[gender=M] * 0.35 +
+[lat] * 0.02 +
+[dob] * -0.01
+
+
+
+LM_27:
+Class 0 :
+-3.58 + 
+[amt] * -0 +
+[gender=M] * -0.35 +
+[lat] * -0.08 +
+[dob] * 0.01
+
+Class 1 :
+3.58 + 
+[amt] * 0    +
+[gender=M] * 0.35 +
+[lat] * 0.08 +
+[dob] * -0.01
+
+
+
+LM_28:
+Class 0 :
+-5.83 + 
+[amt] * 0    +
+[gender=M] * -0.35 +
+[lat] * -0.02 +
+[city_pop] * -0 +
+[dob] * 0.06 +
+[merch_lat] * 0.03
+
+Class 1 :
+5.83 + 
+[amt] * -0 +
+[gender=M] * 0.35 +
+[lat] * 0.02 +
+[city_pop] * 0    +
+[dob] * -0.06 +
+[merch_lat] * -0.03
+
+
+
+LM_29:
+Class 0 :
+-6.23 + 
+[amt] * -0 +
+[gender=M] * -0.35 +
+[state] * 0    +
+[lat] * -0.02 +
+[city_pop] * 0    +
+[dob] * 0.01 +
+[merch_lat] * 0.03
+
+Class 1 :
+6.23 + 
+[amt] * 0    +
+[gender=M] * 0.35 +
+[state] * -0 +
+[lat] * 0.02 +
+[city_pop] * -0 +
+[dob] * -0.01 +
+[merch_lat] * -0.03
+
+
+LM_30:
+Class 0 :
+-28.19 + 
+[amt] * -0 +
+[gender=M] * -0.35 +
+[state] * 0    +
+[lat] * -0.02 +
+[city_pop] * 0    +
+[dob] * 0.01 +
+[merch_lat] * 0.03
+
+Class 1 :
+28.19 + 
+[amt] * 0    +
+[gender=M] * 0.35 +
+[state] * -0 +
+[lat] * 0.02 +
+[city_pop] * -0 +
+[dob] * -0.01 +
+[merch_lat] * -0.03
+
+LM_31:
+Class 0 :
+-28.03 + 
+[amt] * -0 +
+[gender=M] * -0.35 +
+[state] * 0    +
+[lat] * -0.02 +
+[city_pop] * 0    +
+[dob] * 0.01 +
+[merch_lat] * 0.03
+
+Class 1 :
+28.03 + 
+[amt] * 0    +
+[gender=M] * 0.35 +
+[state] * -0 +
+[lat] * 0.02 +
+[city_pop] * -0 +
+[dob] * -0.01 +
+[merch_lat] * -0.03
+
+LM_32:
+Class 0 :
+-9.05 + 
+[amt] * 0    +
+[gender=M] * -0.35 +
+[state] * 0    +
+[lat] * -0.02 +
+[city_pop] * -0 +
+[dob] * 0.01 +
+[merch_lat] * 0.03
+
+Class 1 :
+9.05 + 
+[amt] * -0 +
+[gender=M] * 0.35 +
+[state] * -0 +
+[lat] * 0.02 +
+[city_pop] * 0    +
+[dob] * -0.01 +
+[merch_lat] * -0.03
+
+LM_33:
+Class 0 :
+-0.64 + 
+[amt] * -0 +
+[gender=M] * -0.35 +
+[lat] * -0.15 +
+[dob] * -0.05 +
+[merch_lat] * 0.03
+
+Class 1 :
+0.64 + 
+[amt] * 0    +
+[gender=M] * 0.35 +
+[lat] * 0.15 +
+[dob] * 0.05 +
+[merch_lat] * -0.03
+
+
+LM_34:
+Class 0 :
+-7.7 + 
+[amt] * -0 +
+[gender=M] * -0.35 +
+[lat] * -0.02 +
+[dob] * 0.01
+
+Class 1 :
+7.7  + 
+[amt] * 0    +
+[gender=M] * 0.35 +
+[lat] * 0.02 +
+[dob] * -0.01
+
+LM_35:
+Class 0 :
+890.48 + 
+[amt] * -0 +
+[gender=M] * -0.35 +
+[lat] * -0.02 +
+[dob] * 0.01
+
+Class 1 :
+-890.48 + 
+[amt] * 0    +
+[gender=M] * 0.35 +
+[lat] * 0.02 +
+[dob] * -0.01
+
+
+LM_36:
+Class 0 :
+-6.76 + 
+[amt] * -0 +
+[gender=M] * -0.35 +
+[state] * -0 +
+[zip] * 0    +
+[long] * 0    +
+[dob] * -0 +
+[merch_lat] * 0.01 +
+[merch_long] * -0
+
+Class 1 :
+6.76 + 
+[amt] * 0    +
+[gender=M] * 0.35 +
+[state] * 0    +
+[zip] * -0 +
+[long] * -0 +
+[dob] * 0    +
+[merch_lat] * -0.01 +
+[merch_long] * 0   
+
+
+
+
+
+LM_37:
+Class 0 :
+-2.43 + 
+[amt] * -0 +
+[gender=M] * -0.35 +
+[state] * -0 +
+[zip] * 0    +
+[long] * 0    +
+[dob] * -0 +
+[merch_lat] * 0.01
+
+Class 1 :
+2.43 + 
+[amt] * 0    +
+[gender=M] * 0.35 +
+[state] * 0    +
+[zip] * -0 +
+[long] * -0 +
+[dob] * 0    +
+[merch_lat] * -0.01
+
+LM_38:
+Class 0 :
+-7.97 + 
+[amt] * 0    +
+[gender=M] * -0.35 +
+[state] * -0 +
+[zip] * 0    +
+[long] * 0    +
+[dob] * -0 +
+[merch_lat] * 0.01
+
+Class 1 :
+7.97 + 
+[amt] * -0 +
+[gender=M] * 0.35 +
+[state] * 0    +
+[zip] * -0 +
+[long] * -0 +
+[dob] * 0    +
+[merch_lat] * -0.01
+
+LM_39:
+Class 0 :
+-4.38 + 
+[amt] * -0 +
+[gender=M] * -0.35 +
+[state] * -0 +
+[zip] * 0    +
+[long] * 0    +
+[dob] * -0 +
+[merch_lat] * 0.01
+
+Class 1 :
+4.38 + 
+[amt] * 0    +
+[gender=M] * 0.35 +
+[state] * 0    +
+[zip] * -0 +
+[long] * -0 +
+[dob] * 0    +
+[merch_lat] * -0.01
+
+LM_40:
+Class 0 :
+-4.38 + 
+[amt] * -0 +
+[gender=M] * -0.35 +
+[state] * -0 +
+[zip] * 0    +
+[long] * 0    +
+[dob] * -0 +
+[merch_lat] * 0.01
+
+Class 1 :
+4.38 + 
+[amt] * 0    +
+[gender=M] * 0.35 +
+[state] * 0    +
+[zip] * -0 +
+[long] * -0 +
+[dob] * 0    +
+[merch_lat] * -0.01
+
+LM_41:
+Class 0 :
+-2.63 + 
+[amt] * -0 +
+[gender=M] * -0.35 +
+[state] * -0 +
+[zip] * 0    +
+[long] * 0    +
+[dob] * -0 +
+[merch_lat] * 0.01
+
+Class 1 :
+2.63 + 
+[amt] * 0    +
+[gender=M] * 0.35 +
+[state] * 0    +
+[zip] * -0 +
+[long] * -0 +
+[dob] * 0    +
+[merch_lat] * -0.01
+
+
+
+LM_42:
+Class 0 :
+10.34 + 
+[amt] * -0.01 +
+[gender=M] * -0.35 +
+[state] * -0 +
+[zip] * -0 +
+[lat] * -0.01 +
+[dob] * 0    +
+[merch_long] * -0
+
+Class 1 :
+-10.34 + 
+[amt] * 0.01 +
+[gender=M] * 0.35 +
+[state] * 0    +
+[zip] * 0    +
+[lat] * 0.01 +
+[dob] * -0 +
+[merch_long] * 0   
+
+
+LM_43:
+Class 0 :
+1.01 + 
+[amt] * -0 +
+[gender=M] * -0.35 +
+[state] * -0 +
+[zip] * -0 +
+[lat] * -0.01 +
+[dob] * 0.02 +
+[merch_long] * -0
+
+Class 1 :
+-1.01 + 
+[amt] * 0    +
+[gender=M] * 0.35 +
+[state] * 0    +
+[zip] * 0    +
+[lat] * 0.01 +
+[dob] * -0.02 +
+[merch_long] * 0   
+
+
+LM_44:
+Class 0 :
+2.05 + 
+[amt] * -0 +
+[gender=M] * -0.35 +
+[state] * -0 +
+[zip] * -0 +
+[lat] * -0.01 +
+[dob] * 0    +
+[merch_long] * -0
+
+Class 1 :
+-2.05 + 
+[amt] * 0    +
+[gender=M] * 0.35 +
+[state] * 0    +
+[zip] * 0    +
+[lat] * 0.01 +
+[dob] * -0 +
+[merch_long] * 0   
+
+
+LM_45:
+Class 0 :
+2.93 + 
+[amt] * -0 +
+[gender=M] * -0.35 +
+[state] * -0 +
+[zip] * -0 +
+[lat] * -0.02 +
+[dob] * 0    +
+[merch_long] * -0.03
+
+Class 1 :
+-2.93 + 
+[amt] * 0    +
+[gender=M] * 0.35 +
+[state] * 0    +
+[zip] * 0    +
+[lat] * 0.02 +
+[dob] * -0 +
+[merch_long] * 0.03
+
+
+LM_46:
+Class 0 :
+-0.48 + 
+[amt] * 0    +
+[gender=M] * -0.35 +
+[state] * 0    +
+[zip] * -0 +
+[lat] * -0.01 +
+[dob] * 0    +
+[merch_long] * -0
+
+Class 1 :
+0.48 + 
+[amt] * -0 +
+[gender=M] * 0.35 +
+[state] * -0 +
+[zip] * 0    +
+[lat] * 0.01 +
+[dob] * -0 +
+[merch_long] * 0   
+
+LM_47:
+Class 0 :
+-34.21 + 
+[amt] * 0    +
+[gender=M] * -0.35 +
+[state] * -0 +
+[zip] * -0 +
+[lat] * -0.01 +
+[dob] * -0.02 +
+[merch_lat] * 0.07 +
+[merch_long] * -0
+
+Class 1 :
+34.21 + 
+[amt] * -0 +
+[gender=M] * 0.35 +
+[state] * 0    +
+[zip] * 0    +
+[lat] * 0.01 +
+[dob] * 0.02 +
+[merch_lat] * -0.07 +
+[merch_long] * 0   
+
+
+
+
+
+LM_48:
+Class 0 :
+-0.13 + 
+[amt] * -0 +
+[gender=M] * -0.35 +
+[lat] * -0.01 +
+[dob] * 0.02
+
+Class 1 :
+0.13 + 
+[amt] * 0    +
+[gender=M] * 0.35 +
+[lat] * 0.01 +
+[dob] * -0.02
+
+
+LM_49:
+Class 0 :
+4.28 + 
+[amt] * -0 +
+[gender=M] * -0.35 +
+[lat] * -0.01 +
+[dob] * -0 +
+[merch_lat] * -0.05
+
+Class 1 :
+-4.28 + 
+[amt] * 0    +
+[gender=M] * 0.35 +
+[lat] * 0.01 +
+[dob] * 0    +
+[merch_lat] * 0.05
+
+
+LM_50:
+Class 0 :
+43.13 + 
+[amt] * 0    +
+[gender=M] * -0.35 +
+[state] * 0.01 +
+[lat] * -0.01 +
+[city_pop] * -0 +
+[dob] * -0.03
+
+Class 1 :
+-43.13 + 
+[amt] * -0 +
+[gender=M] * 0.35 +
+[state] * -0.01 +
+[lat] * 0.01 +
+[city_pop] * 0    +
+[dob] * 0.03
+
+LM_51:
+Class 0 :
+-0.77 + 
+[amt] * 0    +
+[gender=M] * -0.35 +
+[lat] * -0.01 +
+[city_pop] * -0 +
+[dob] * -0
+
+Class 1 :
+0.77 + 
+[amt] * -0 +
+[gender=M] * 0.35 +
+[lat] * 0.01 +
+[city_pop] * 0    +
+[dob] * 0   
+
+
+LM_52:
+Class 0 :
+5.23 + 
+[amt] * -0 +
+[gender=M] * -0.35 +
+[state] * -0 +
+[lat] * -0 +
+[dob] * 0.02
+
+Class 1 :
+-5.23 + 
+[amt] * 0    +
+[gender=M] * 0.35 +
+[state] * 0    +
+[lat] * 0    +
+[dob] * -0.02
+
+
+LM_53:
+Class 0 :
+-9.66 + 
+[amt] * 0.02 +
+[gender=M] * -0.35 +
+[state] * -0 +
+[lat] * -0 +
+[dob] * -0.01
+
+Class 1 :
+9.66 + 
+[amt] * -0.02 +
+[gender=M] * 0.35 +
+[state] * 0    +
+[lat] * 0    +
+[dob] * 0.01
+
+LM_54:
+Class 0 :
+6.11 + 
+[amt] * -0 +
+[gender=M] * -0.35 +
+[state] * -0 +
+[lat] * -0 +
+[dob] * -0.01
+
+Class 1 :
+-6.11 + 
+[amt] * 0    +
+[gender=M] * 0.35 +
+[state] * 0    +
+[lat] * 0    +
+[dob] * 0.01
+
+
+LM_55:
+Class 0 :
+-4.91 + 
+[amt] * -0 +
+[gender=M] * -0.35 +
+[lat] * -0.01 +
+[dob] * 0   
+
+Class 1 :
+4.91 + 
+[amt] * 0    +
+[gender=M] * 0.35 +
+[lat] * 0.01 +
+[dob] * -0
+
+LM_56:
+Class 0 :
+-6.13 + 
+[amt] * 0    +
+[gender=M] * -0.35 +
+[state] * -0 +
+[lat] * -0.01 +
+[dob] * 0   
+
+Class 1 :
+6.13 + 
+[amt] * -0 +
+[gender=M] * 0.35 +
+[state] * 0    +
+[lat] * 0.01 +
+[dob] * -0
+
+
+LM_57:
+Class 0 :
+0.72 + 
+[amt] * -0 +
+[gender=M] * -0.35 +
+[zip] * -0 +
+[lat] * -0.05 +
+[city_pop] * 0    +
+[dob] * 0.07
+
+Class 1 :
+-0.72 + 
+[amt] * 0    +
+[gender=M] * 0.35 +
+[zip] * 0    +
+[lat] * 0.05 +
+[city_pop] * -0 +
+[dob] * -0.07
+
+LM_58:
+Class 0 :
+-20.67 + 
+[amt] * 0.01 +
+[gender=M] * -0.35 +
+[state] * 0    +
+[zip] * 0    +
+[lat] * -0.01 +
+[long] * 0    +
+[dob] * -0 +
+[merch_lat] * 0.03
+
+Class 1 :
+20.67 + 
+[amt] * -0.01 +
+[gender=M] * 0.35 +
+[state] * -0 +
+[zip] * -0 +
+[lat] * 0.01 +
+[long] * -0 +
+[dob] * 0    +
+[merch_lat] * -0.03
+
+LM_59:
+Class 0 :
+2.92 + 
+[amt] * 0    +
+[gender=M] * 1.99 +
+[state] * -0 +
+[lat] * -0.01 +
+[city_pop] * 0    +
+[dob] * 0.04 +
+[merch_long] * -0.01
+
+Class 1 :
+-2.92 + 
+[amt] * -0 +
+[gender=M] * -1.99 +
+[state] * 0    +
+[lat] * 0.01 +
+[city_pop] * -0 +
+[dob] * -0.04 +
+[merch_long] * 0.01
+
+LM_60:
+Class 0 :
+-13.84 + 
+[amt] * 0.01 +
+[gender=M] * -0.26 +
+[state] * 0    +
+[zip] * -0 +
+[lat] * -0.03 +
+[dob] * 0.02 +
+[merch_long] * -0.03
+
+Class 1 :
+13.84 + 
+[amt] * -0.01 +
+[gender=M] * 0.26 +
+[state] * -0 +
+[zip] * 0    +
+[lat] * 0.03 +
+[dob] * -0.02 +
+[merch_long] * 0.03
+
+
+Time taken to build model: 5558.75 seconds
+
+=== Evaluation on test set ===
+
+Time taken to test model on supplied test set: 4.38 seconds
+
+=== Summary ===
+
+Correctly Classified Instances      554499               99.7805 %
+Incorrectly Classified Instances      1220                0.2195 %
+Kappa statistic                          0.6928
+Mean absolute error                      0.4955
+Root mean squared error                  0.4979
+Relative absolute error               5159.1627 %
+Root relative squared error            802.5167 %
+Total Number of Instances           555719     
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.999    0.355    0.999      0.999    0.999      0.695    0.749     0.999     0
+                 0.645    0.001    0.751      0.645    0.694      0.695    0.749     0.569     1
+Weighted Avg.    0.998    0.354    0.998      0.998    0.998      0.695    0.749     0.997     
+
+=== Confusion Matrix ===
+
+      a      b   <-- classified as
+ 553116    458 |      a = 0
+    762   1383 |      b = 1
+

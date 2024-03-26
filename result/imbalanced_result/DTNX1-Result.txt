@@ -1,0 +1,70 @@
+=== Run information ===
+
+Scheme:       weka.classifiers.rules.DTNB -X 1
+Relation:     fraudTranDetect
+Instances:    1296675
+Attributes:   22
+              trans_date_trans_time
+              cc_num
+              merchant
+              category
+              amt
+              first
+              last
+              gender
+              street
+              city
+              state
+              zip
+              lat
+              long
+              city_pop
+              job
+              dob
+              trans_num
+              unix_time
+              merch_lat
+              merch_long
+              class-att
+Test mode:    user supplied test set:  size unknown (reading incrementally)
+
+=== Classifier model (full training set) ===
+
+Decision Table:
+
+Number of training instances: 1296675
+Number of Rules : 15640
+Non matches covered by Majority class.
+Evaluation (for feature selection): CV (leave one out) 
+Feature set: 1,2,6,8,10,11,14,16,22
+
+Time taken to build model: 14239.85 seconds
+
+=== Evaluation on test set ===
+
+Time taken to test model on supplied test set: 4.3 seconds
+
+=== Summary ===
+
+Correctly Classified Instances      538008               96.813  %
+Incorrectly Classified Instances     17711                3.187  %
+Kappa statistic                          0.1145
+Mean absolute error                      0.0654
+Root mean squared error                  0.1641
+Relative absolute error                680.5014 %
+Root relative squared error            264.5746 %
+Total Number of Instances           555719     
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.970    0.434    0.998      0.970    0.984      0.188    0.903     0.999     0
+                 0.566    0.030    0.068      0.566    0.121      0.188    0.903     0.156     1
+Weighted Avg.    0.968    0.432    0.995      0.968    0.980      0.188    0.903     0.996     
+
+=== Confusion Matrix ===
+
+      a      b   <-- classified as
+ 536793  16781 |      a = 0
+    930   1215 |      b = 1
+
