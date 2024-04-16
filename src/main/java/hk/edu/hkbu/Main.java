@@ -11,6 +11,10 @@ import java.util.Collections;
 import java.util.Date;
 import java.util.List;
 
+/**
+ * The purpose of the program is to convert the training and testing csv files
+ * into ARFF file WEKA recognized.
+ */
 public class Main {
     public static void main(String[] args) {
 
