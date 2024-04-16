@@ -54,6 +54,10 @@ Check the output folder to see if fraudTrain_balanced.arff and fraudTest.arff ar
 
 Open the fraudTrain_balanced.arff file in Weka.
 
+## How the records in fraudTrain_balanced.arff are generated.
+
+In the fraudTrain.csv, there are totally 7506 fraud records, we choose all the fraud records, and randomly choose two times of fraud records.
+
 ## How each field is transferred when output the arff file.
 
 column [0] - no - ignored, not output
