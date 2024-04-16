@@ -56,7 +56,7 @@ Open the fraudTrain_balanced.arff file in Weka.
 
 Currently, the best result is when under this selection.
 
-----------------------------------
+```
 Scheme:       weka.classifiers.misc.InputMappedClassifier -I -trim -W weka.classifiers.trees.J48Consolidated -- -C 0.25 -M 2 -Q 1 -RM-C -RM-N 99.0 -RM-B -2 -RM-D 50.0
 Relation:     fraudTranDetect-weka.filters.unsupervised.attribute.Remove-R9-10,18-weka.filters.unsupervised.attribute.Remove-R13-weka.filters.unsupervised.attribute.Remove-R13
 Instances:    22518
@@ -80,11 +80,11 @@ Attributes:   17
               class-att
 Test mode:    user supplied test set:  size unknown (reading incrementally)
 
-----------------------------------
+```
 
 The result is the class 1's recall 0.964.
 
-------------
+```
 
 === Summary ===
 
@@ -110,7 +110,7 @@ Weighted Avg.    0.958    0.036    0.996      0.958    0.975      0.273    0.982
  530054  23520 |      a = 0
      78   2067 |      b = 1
     
-------------------------
+```
 
 
 ## How the records in fraudTrain_balanced.arff are generated.
