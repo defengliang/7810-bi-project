@@ -54,6 +54,65 @@ Check the output folder to see if fraudTrain_balanced.arff and fraudTest.arff ar
 
 Open the fraudTrain_balanced.arff file in Weka.
 
+Currently, the best result is when under this selection.
+
+----------------------------------
+Scheme:       weka.classifiers.misc.InputMappedClassifier -I -trim -W weka.classifiers.trees.J48Consolidated -- -C 0.25 -M 2 -Q 1 -RM-C -RM-N 99.0 -RM-B -2 -RM-D 50.0
+Relation:     fraudTranDetect-weka.filters.unsupervised.attribute.Remove-R9-10,18-weka.filters.unsupervised.attribute.Remove-R13-weka.filters.unsupervised.attribute.Remove-R13
+Instances:    22518
+Attributes:   17
+              trans_date_trans_time
+              cc_num
+              merchant
+              category
+              amt
+              first
+              last
+              gender
+              state
+              zip
+              lat
+              long
+              dob
+              unix_time
+              merch_lat
+              merch_long
+              class-att
+Test mode:    user supplied test set:  size unknown (reading incrementally)
+
+----------------------------------
+
+The result is the class 1's recall 0.964.
+
+------------
+
+=== Summary ===
+
+Correctly Classified Instances      532121               95.7536 %
+Incorrectly Classified Instances     23598                4.2464 %
+Kappa statistic                          0.143
+Mean absolute error                      0.0431
+Root mean squared error                  0.1827
+Relative absolute error                 12.8722 %
+Root relative squared error             54.4938 %
+Total Number of Instances           555719
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.958    0.036    1.000      0.958    0.978      0.273    0.982     1.000     0
+                 0.964    0.042    0.081      0.964    0.149      0.273    0.982     0.266     1
+Weighted Avg.    0.958    0.036    0.996      0.958    0.975      0.273    0.982     0.997
+
+=== Confusion Matrix ===
+
+      a      b   <-- classified as
+ 530054  23520 |      a = 0
+     78   2067 |      b = 1
+    
+------------------------
+
+
 ## How the records in fraudTrain_balanced.arff are generated.
 
 
