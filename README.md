@@ -1,6 +1,10 @@
 ## Introduction
 
-7810 BI group project.
+The main purpose of this project is to convert a csv file from https://www.kaggle.com/datasets/kartik2112/fraud-detection to ARFF file.
+
+The ARFF file is then open in WEKA for classification.
+
+If we consider each column in the CSV file as a feature for classification, another goal of the program is to keep as many features as possible when converting it to a ARFF file.(We don't want to loss features so as to affect the result of the classification.)
 
 ## How to run
 
@@ -116,7 +120,7 @@ Weighted Avg.    0.958    0.036    0.996      0.958    0.975      0.273    0.982
 ## How the records in fraudTrain_balanced.arff are generated.
 
 
-In the fraudTrain.csv, there are totally 1,296,676 records, inside there are 7,506 fraud records, we choose all the fraud records, and randomly choose two times of normal records.
+In the fraudTrain.csv, there are totally 1,296,676 records, inside there are 7,506 fraud records, we choose all the fraud records, and randomly choose the normal records two times of the fraud records.So the generated fraudTrain_balanced.arff has 22,518 records.
 
 ## How each field is transferred when output the arff file.
 
